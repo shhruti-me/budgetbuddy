@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="landingstyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-placeholder">Budget Buddy</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <button class="login">Login</button>
+            <button class="signup">Sign up</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="herocontent">
+            <h1>Take Control of Your <span class="highlight">Finances</span> <em>Effortlessly!</em></h1>
+            <p>Track your expenses, set budgets, and plan your savings—<br> All in one beautifully designed platform.</p>
+            <div class="buttons">
+                <button class="get-started">Get Started</button>
+                <a href="#" class="login">Login →</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/graph.png" alt="Financial Chart">
+        </div>
+    </section>
+
+    <section class="budget-section">
+        <div class="budget-content">
+            <h1>Take Control of <span class="highlight">Your Money</span><br> <em>with Ease!</em></h1>
+            <p>Track your expenses, plan your budget, and stay ahead of your finances—all in one place. Whether it's personal savings or shared budgets, we've got you covered.</p>
+            <button class="budget-btn">Start Budgeting</button>
+        </div>
+        <div class="budget-image">
+            <img src="images/stack of money.svg" alt="Stack of Money">
+        </div>
+    </section>
+
+    <h1 style="font-size: 50px; font-weight: 400; text-align: center;">
+        Smart <span style="color: #c3ff00; font-weight: 500;">Finance</span>, <em>Simple Living</em>
+    </h1>
+
+    <!-- Scrolling Text Rows -->
+    <div class="scrolling-section">
+        <div class="scroll-container">
+            <span>Budgeting</span>
+            <span>Smart Savings</span>
+            <span>Expense Tracking</span>
+            <span>Goal Setting</span>
+            <span>Financial Freedom</span>
+            <span>Shared Budgets</span>
+            <span>Smart Reminders</span>
+            <span>Subscription Tracker</span>
+        </div>
+    </div>
+
+    <div class="scrolling-section">
+        <div class="scroll-container reverse">
+            <span>Subscription Tracker</span>
+            <span>Bill Alerts</span>
+            <span>Spending Insights</span>
+            <span>Money Management</span>
+            <span>Stay on Track</span>
+            <span>Real-Time Updates</span>
+            <span>Expense Trends</span>
+            <span>Simple & Secure</span>
+        </div>
+    </div>
+
+    <script>
+        // Duplicate text elements for seamless scrolling
+        document.querySelectorAll(".scroll-container").forEach(container => {
+            let clone = container.innerHTML;
+            container.innerHTML += clone; // Duplicate content to ensure continuous loop
+        });
+    </script>
+
+<div class="cards-container">
+    <!-- Smart Budgeting -->
+    <div class="card">
+        <h2>Smart Budgeting</h2>
+        <h3>Custom budget</h3>
+        <p>Create personalized budget plan</p>
+
+        <h3>Set spending limits</h3>
+        <p>Get alerts when exceeding limits</p>
+
+        <h3>Set Goals</h3>
+        <p>Plan for savings weekly or monthly</p>
+    </div>
+
+    <!-- Visual Reports -->
+    <div class="card">
+        <h2>Visual Reports</h2>
+        <h3>Categorization</h3>
+        <p>Track expenses by category</p>
+
+        <h3>Recurring tracking</h3>
+        <p>Auto-track subscription bills</p>
+
+        <h3>Custom reports</h3>
+        <p>Analyze spending habits</p>
+    </div>
+
+    <!-- Secure & Accessible -->
+    <div class="card">
+        <h2>Secure & Accessible</h2>
+        <h3>Sync bills</h3>
+        <p>Share expenses with others</p>
+
+        <h3>Automate</h3>
+        <p>Easy access via automation</p>
+
+        <h3>Privacy</h3>
+        <p>Data protection and security</p>
+    </div>
+</div>
+<section class="feature-section">
+    <!-- Navigation -->
+    <div class="nav2">
+        <button class="active" data-content="shared">SHARED BUDGET</button>
+        <button data-content="analytics">ANALYTICS</button>
+        <button data-content="goals">SET GOALS</button>
+        <button data-content="tracker">TRACKER</button>
+    </div>
+
+    <!-- Content Container -->
+    <div class="feature-content-container">
+        <!-- Content Sections -->
+        <div class="feature-content active" id="shared-content">
+            <div class="text-content">
+                <h1>Share your expenses with friends & family</h1>
+                <p>Invite others via email or a unique budget link and create shared budgets for households, trips, or group expenses.</p>
+                <button class="cta-button">Start budgeting</button>
+            </div>
+            <div class="image-placeholder">
+                <img src="images/Frame.svg" alt="Shared Budget Illustration" />
+            </div>
+        </div>
+
+        <div class="feature-content" id="analytics-content">
+            <div class="text-content">
+                <h1>View your analytics & track your trends</h1>
+                <p>View pie charts to see exactly where your money goes and analyze spending habits over time with detailed line graphs.</p>
+                <button class="cta-button">View analytics</button>
+            </div>
+            <div class="image-placeholder">
+                <img src="images/2.svg" alt="Analytics Illustration" />
+            </div>
+        </div>
+
+        <div class="feature-content" id="goals-content">
+            <div class="text-content">
+                <h1>Set your goals & work on it</h1>
+                <p>Plan accordingly for your goals and get real-time notifications when exceeding your limits.</p>
+                <button class="cta-button">Set goals</button>
+            </div>
+            <div class="image-placeholder">
+                <img src="images/goals.svg" alt="Goals Illustration" />
+            </div>
+        </div>
+
+        <div class="feature-content" id="tracker-content">
+            <div class="text-content">
+                <h1>Get hands on with budget tracking</h1>
+                <p>Track expenses by category: Food, Rent, Travel, and more. Automatically log subscriptions or recurring bills.</p>
+                <button class="cta-button">Start tracking</button>
+            </div>
+            <div class="image-placeholder">
+                <img src="images/tracker.svg" alt="Tracker Illustration" />
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-[#F8F5F0] p-10 w-full min-h-screen flex justify-center items-center">
+    <div class="max-w-6xl flex flex-wrap md:flex-nowrap gap-20 items-center">
+        <div class="flex-1 mt-4 animate-fadeInUp">
+            <h1 class="text-4xl font-semibold text-black fade-in-up">
+                <span class="text-blue-600">Budget Tracker</span> makes work better for everyone
+            </h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1 w-full">
+            <div class="bg-[#DDFEC9] p-6 rounded-xl flex flex-col items-center text-center shadow-lg transform transition-transform duration-300 hover:scale-110 fade-in-up">
+                <img src="images/s1.svg" alt="Individuals" class="w-32 h-32 mb-4">
+                <h3 class="text-green-600 text-lg font-medium">Individuals</h3>
+            </div>
+            <div class="bg-[#EADCF6] p-6 rounded-xl flex flex-col items-center text-center shadow-lg transform transition-transform duration-300 hover:scale-110 fade-in-up">
+                <img src="images/s2.svg" alt="Families" class="w-32 h-32 mb-4">
+                <h3 class="text-purple-600 text-lg font-medium">Families</h3>
+            </div>
+            <div class="bg-[#D6D8F9] p-6 rounded-xl flex flex-col items-center text-center shadow-lg transform transition-transform duration-300 hover:scale-110 fade-in-up">
+                <img src="images/s3.svg" alt="Small Businesses" class="w-32 h-32 mb-4">
+                <h3 class="text-blue-600 text-lg font-medium">Small Businesses</h3>
+            </div>
+            <div class="bg-[#E9DED5] p-6 rounded-xl flex flex-col items-center text-center shadow-lg transform transition-transform duration-300 hover:scale-110 fade-in-up">
+                <img src="images/s4.svg" alt="Teams & Departments" class="w-32 h-32 mb-4">
+                <h3 class="text-brown-600 text-lg font-medium">Teams & Departments</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="budget-footer">
+    <div class="footer-content">
+        <h2 class="footer-title">Budget Buddy</h2>
+        <p class="footer-made-by">Made by</p>
+        <ul class="footer-authors">
+            <li>Shruti S - 23BCE1383</li>
+            <li>Ramya Nakshathra R - 23BCE1611</li>
+            <li>Sri Varsha S - 23BCE1978</li>
+        </ul>
+        <hr class="footer-divider">
+        <p class="footer-copyright">© 2025, Web Programming, BCSE203E</p>
+    </div>
+</footer>
+
+
+
+<script>
+    document.querySelectorAll('.nav2 button').forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            document.querySelectorAll('.nav2 button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Get the content container and all content sections
+            const container = document.querySelector('.feature-content-container');
+            const contents = document.querySelectorAll('.feature-content');
+            const targetContent = document.getElementById(button.dataset.content + '-content');
+            
+            // Calculate scroll position
+            const scrollPosition = Array.from(contents).indexOf(targetContent) * container.offsetWidth;
+            
+            // Smooth scroll to the target content
+            container.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    function expandCard(card) {
+        card.style.transform = "scaleX(1.1)";
+        setTimeout(() => {
+            card.style.transform = "scaleX(1)";
+        }, 300);
+    }
+</script>
+
+
+</body>
+</html>
+
