@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Dashboard</title>
+    <link rel="stylesheet" href="analyticsstyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h3>Budget Buddy</h3>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Dashboard</a>
+                <a href="#" class="nav-link active">Analytics</a>
+                <a href="#" class="nav-link">Shared space</a>
+            </div>
+            <div class="profile-pic">
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="stats-grid">
+            <div class="date-card glass-card">
+                <h3>Date</h3>
+                <div class="date-selector">
+                    <input type="date" id="dateInput" class="date-input">
+                    <input type="month" id="monthInput" class="date-input hidden">
+                    <input type="number" id="yearInput" class="date-input hidden" min="2000" max="2100">
+                </div>
+            </div>
+            <div class="stat-card-savings stat-card glass-card">
+                <h3>Total Savings</h3>
+                <p class="stat-value" id="savingsValue">$600</p>
+                <p class="stat-change positive">+15%</p>
+            </div>
+            <div class="stat-card-balance stat-card glass-card">
+                <h3>Net Balance</h3>
+                <p class="stat-value" id="balanceValue">$200</p>
+                <p class="stat-change negative">-5%</p>
+            </div>
+            <div class="stat-card-expense stat-card glass-card">
+                <h3>Expenses</h3>
+                <p class="stat-value" id="expensesValue">$200</p>
+                <button class="add-button" onclick="openModal('expenseModal')">+</button>
+            </div>
+            <div class="stat-card-income stat-card glass-card">
+                <h3>Income</h3>
+                <p class="stat-value" id="incomeValue">$400</p>
+                <button class="add-button" onclick="openModal('incomeModal')">+</button>
+            </div>
+        </div>
+
+        <div class="time-range">
+            <button class="time-btn active" data-range="daily">Daily</button>
+            <button class="time-btn" data-range="monthly">Monthly</button>
+            <button class="time-btn" data-range="yearly">Yearly</button>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card glass-card">
+                <h3>Expense Breakdown</h3>
+                <canvas id="expenseChart"></canvas>
+            </div>
+            <div class="chart-card glass-card">
+                <h3>Income vs Expenses Trend</h3>
+                <canvas id="trendChart"></canvas>
+            </div>
+        </div>
+
+        <div class="transactions glass-card">
+            <h3>Transactions</h3>
+            <button class="add-transaction-btn" onclick="openModal('transactionModal')">Add Transaction</button>
+            <table id="transactionsTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+                </thead>
+                <tbody id="transactionsBody"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div id="expenseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('expenseModal')">&times;</span>
+            <h2>Add Expense</h2>
+            <form id="expenseForm" onsubmit="handleExpenseSubmit(event)">
+                <input type="number" placeholder="Amount" required>
+                <input type="text" placeholder="Description" required>
+                <select required>
+                    <option value="">Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Others">Others</option>
+                </select>
+                <button type="submit">Add Expense</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="incomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('incomeModal')">&times;</span>
+            <h2>Add Income</h2>
+            <form id="incomeForm" onsubmit="handleIncomeSubmit(event)">
+                <input type="number" placeholder="Amount" required>
+                <input type="text" placeholder="Description" required>
+                <select required>
+                    <option value="">Select Category</option>
+                    <option value="Salary">Salary</option>
+                    <option value="Freelance">Freelance</option>
+                    <option value="Investment">Investment</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button type="submit">Add Income</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="transactionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('transactionModal')">&times;</span>
+            <h2>Add Transaction</h2>
+            <form id="transactionForm" onsubmit="handleTransactionSubmit(event)">
+                <select id="transactionType" required>
+                    <option value="">Select Type</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <input type="number" placeholder="Amount" required>
+                <input type="text" placeholder="Description" required>
+                <input type="date" required>
+                <select id="transactionCategory" required>
+                    <option value="">Select Category</option>
+                </select>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="analyticsscript.js"></script>
+</body>
+</html>
